@@ -15,6 +15,7 @@ joblib = "*"
 numpy = "*"
 python-dotenv = "*"
 lxml = "*"
+bs4 = "*"
 
 [requires]
 python_version = "3.8"
