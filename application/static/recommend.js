@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 $(function() {
   // Button will be disabled until we type anything inside the input field
   const source = document.getElementById('autoComplete');
@@ -14,7 +12,7 @@ $(function() {
   source.addEventListener('input', inputHandler);
 
   $('.movie-button').on('click',function(){
-    var my_api_key = process.env.TMDB_API_Key;
+    var my_api_key = 'a12d6466121bda92df3cfe86d34a3c70';
     var title = $('.movie').val();
     if (title=="") {
       $('.results').css('display','none');
@@ -28,7 +26,7 @@ $(function() {
 
 // will be invoked when clicking on the recommended movies
 function recommendcard(e){
-  var my_api_key = process.env.TMDB_API_Key;
+  var my_api_key = 'a12d6466121bda92df3cfe86d34a3c70';
   var title = e.getAttribute('title'); 
   load_details(my_api_key,title);
 }
@@ -68,7 +66,7 @@ function movie_recs(movie_title,movie_id,my_api_key){
     url:"/similarity",
     data:{'name':movie_title},
     success: function(recs){
-      if(recs=="Sorry! The movie you requested is not in our database."){
+      if(recs=="Sorry! The movie you requested is not in our database. Please check the spelling or try with some other movies"){
         $('.fail').css('display','block');
         $('.results').css('display','none');
         $("#loader").delay(500).fadeOut();

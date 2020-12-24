@@ -33,7 +33,7 @@ def similarity():
         return m_str
 
 
-@app.route("/recommend", methods=["POST"])
+@app.route("/recommend", methods=["POST", "GET"])
 def recommend():
     # getting data from AJAX request
     title = request.form['title']
