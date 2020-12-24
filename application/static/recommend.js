@@ -1,7 +1,9 @@
 $(function() {
-  // Button will be disabled until we type anything inside the input field
+  // Button will be disabled until we type something inside the input field
   const source = document.getElementById('autoComplete');
   const inputHandler = function(e) {
+
+    console.log(e.target.value);
     if(e.target.value==""){
       $('.movie-button').attr('disabled', true);
     }
@@ -9,7 +11,16 @@ $(function() {
       $('.movie-button').attr('disabled', false);
     }
   }
+  console.log(inputHandler)
   source.addEventListener('input', inputHandler);
+
+  $('.fa-arrow-up').click(function(){
+    $('html, body').animate({scrollTop:0}, 'slow');
+  });
+
+  $('.app-title').click(function(){
+    window.location.href = '/';
+  })
 
   $('.movie-button').on('click',function(){
     var my_api_key = 'a12d6466121bda92df3cfe86d34a3c70';
@@ -18,6 +29,11 @@ $(function() {
       $('.results').css('display','none');
       $('.fail').css('display','block');
     }
+
+    if (($('.fail').text() && ($('.footer').css('position') == 'absolute'))) {
+      $('.footer').css('position', 'fixed');
+    }
+
     else{
       load_details(my_api_key,title);
     }
