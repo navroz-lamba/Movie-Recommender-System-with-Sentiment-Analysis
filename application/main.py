@@ -54,5 +54,5 @@ def convert_to_list(my_list):
 # for autocomplete
 def get_suggestions():
     data = pd.read_csv('datasets/main_data.csv')
-    print(data.movie_title.isna().sum())
+    print(data['movie_title'][0])
     return list(data['movie_title'].str.capitalize())
