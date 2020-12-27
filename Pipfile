@@ -17,6 +17,7 @@ python-dotenv = "*"
 lxml = "*"
 bs4 = "*"
 gunicorn = "*"
+cython = "*"
 
 [requires]
 python_version = "3.8"
