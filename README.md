@@ -10,6 +10,8 @@ The details of the movies(title, genre, runtime, rating, poster, etc) are fetche
 
 Check out the live demo: 
 
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/67918990/103171183-14c80580-4818-11eb-9c5b-1f7e41362095.gif)
+
 How to get the API key?
 Create an account on https://www.themoviedb.org/, click on the API link from the left hand sidebar in your account settings and fill all the details to apply for API key. If you are asked for the website URL, just give "NA" if you don't have one. You will see the API key in your API sidebar once your request is approved.
 
