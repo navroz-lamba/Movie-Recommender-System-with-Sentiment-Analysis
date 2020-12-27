@@ -6,14 +6,17 @@ import bs4 as bs
 import urllib.request
 import joblib
 import requests
+import ssl
 
 from application import app
 from application.main import create_similarity, rcmd, get_suggestions, convert_to_list
 
 # load the nlp model and tfidf vectorizer from disk
-clf = joblib.load('predictor.joblib')
-vectorizer = joblib.load('transformer.joblib')
+clf = joblib.load('predictor1.joblib')
+vectorizer = joblib.load('transformer1.joblib')
 
+# to fix url open Error
+ssl._create_default_https_context = ssl._create_unverified_context
 
 @app.route("/")
 @app.route("/home")

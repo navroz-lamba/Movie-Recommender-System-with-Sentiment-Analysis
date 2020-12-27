@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 import bs4 as bs
@@ -11,8 +11,9 @@ import requests
 
 def create_similarity():
     data = pd.read_csv('datasets/main_data.csv')
+    data.comb.fillna('', inplace=True)
     # creating a count matrix
-    tfidf = TfidfTransformer()
+    tfidf = CountVectorizer()
     count_matrix = tfidf.fit_transform(data['comb'])
     # creating a similarity score matrix
     similarity = cosine_similarity(count_matrix)
