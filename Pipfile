@@ -16,6 +16,7 @@ numpy = "*"
 python-dotenv = "*"
 lxml = "*"
 bs4 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
