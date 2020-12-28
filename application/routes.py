@@ -9,7 +9,8 @@ import requests
 import ssl
 
 from application import app
-from application.main import create_similarity, rcmd, get_suggestions, convert_to_list
+# from application.main import create_similarity, rcmd, get_suggestions, convert_to_list
+from application.main import create_similarity, rcmd, convert_to_list
 
 # load the nlp model and tfidf vectorizer from disk
 clf = joblib.load('predictor1.joblib')
