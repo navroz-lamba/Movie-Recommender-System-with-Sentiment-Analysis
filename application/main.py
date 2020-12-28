@@ -28,10 +28,10 @@ def rcmd(movie):
     else:
         idx = data.loc[data['movie_title'] == movie].index[0]
         cos_score = list(enumerate(similarity[idx]))
-        cos_score = sorted(lst, key=lambda x : x[1], reverse=True)
-        cos_score = lst[1:11]  # top 10
+        cos_score = sorted(cos_score, key=lambda x : x[1], reverse=True)
+        cos_score = cos_score[1:11]  # top 10
         top_10 = []
-        for i in range(len(lst)):
+        for i in range(len(cos_score)):
             movie_indices = cos_score[i][0]
             top_10.append(data['movie_title'][movie_indices])
         return top_10  # list of top 10 recommended movies
