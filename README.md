@@ -34,10 +34,12 @@ How to run the project?
 • ALL SET! 
 
 Content Bases Recommender System:
+
 How does it decide which movie is most similar to the movie that user likes? 
 I did that using the cosine-similarity. 
 
 How does Cosine Similarity work?
+
 Cosine similarity is a metric used to measure how similar the documents are irrespective of their size. Mathematically, it measures the cosine of the angle between two vectors projected in a multi-dimensional space. The cosine similarity is advantageous because even if the two similar documents are far apart by the Euclidean distance (due to the size of the document), chances are they may still be oriented closer together. The smaller the angle, higher the cosine similarity.
 
   ![image](https://user-images.githubusercontent.com/36665975/70401457-a7530680-1a55-11ea-9158-97d4e8515ca4.png)
@@ -53,5 +55,7 @@ More about Cosine Similarity : [Understanding the Math behind Cosine Similarity]
 5. [List of movies in 2020](https://en.wikipedia.org/wiki/List_of_American_films_of_2020)
 
 NOTE - 
+
 • I have added the notebooks if you would further like to understand the code better, or maybe look at data wrangling. You will also find a notebook on sentiment analysis model. 
+
 • I couldn't leave the credits dataset in the repository as it was more than 100MB and Git LFS(Large File Storage) would have been needed to make it happen, which doesn't work well with Heroku. 
