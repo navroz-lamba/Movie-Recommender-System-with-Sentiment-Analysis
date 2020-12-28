@@ -18,7 +18,7 @@ vectorizer = joblib.load('transformer1.joblib')
 ssl._create_default_https_context = ssl._create_unverified_context
 
 def create_similarity():
-    data = pd.read_csv('datasets/main_data.csv')
+    data = pd.read_csv('main_data.csv')
     data.comb.fillna('', inplace=True)
     # creating a count matrix
     tfidf = CountVectorizer()
@@ -61,17 +61,19 @@ def convert_to_list(my_list):
 
 # for autocomplete
 def get_suggestions():
-    data = pd.read_csv('datasets/main_data.csv')
-    print(data.columns)
-    return list(data['movie_title'].str.capitalize())
+    data1 = pd.read_csv('main_data.csv')
+    print(data1.columns)
+    return list(data1['movie_title'].str.capitalize())
 
 app = Flask(__name__)
+
+print('works fine uptil here --- --- --- - -- -- - -----')
 
 @app.route("/")
 @app.route("/home")
 def home():
     suggestions = get_suggestions()
-    return render_template('home.html',suggestions=suggestions)
+    return render_template('home.html', suggestions=suggestions)
 
 
 @app.route("/similarity", methods=["POST"])
