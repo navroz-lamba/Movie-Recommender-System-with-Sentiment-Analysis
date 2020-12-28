@@ -5,6 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 def create_similarity():
     data = pd.read_csv('main_data.csv')
+    data['comb'].fillna(" ", inplace=True)
     # creating a count matrix
     cv = CountVectorizer()
     count_matrix = cv.fit_transform(data['comb'])
