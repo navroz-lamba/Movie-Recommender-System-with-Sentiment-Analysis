@@ -1,20 +1,13 @@
-import numpy as np
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import json
-import bs4 as bs
-import urllib.request
-import joblib
-import requests
 
 
 def create_similarity():
     data = pd.read_csv('main_data.csv')
-    data.comb.fillna('', inplace=True)
     # creating a count matrix
-    tfidf = CountVectorizer()
-    count_matrix = tfidf.fit_transform(data['comb'])
+    cv = CountVectorizer()
+    count_matrix = cv.fit_transform(data['comb'])
     # creating a similarity score matrix
     similarity = cosine_similarity(count_matrix)
     return data, similarity
@@ -33,14 +26,14 @@ def rcmd(movie):
              
     else:
         idx = data.loc[data['movie_title'] == movie].index[0]
-        lst = list(enumerate(similarity[idx]))
-        lst = sorted(lst, key=lambda x : x[1], reverse=True)
-        lst = lst[1:11] # top 10
-        l = []
+        cos_score = list(enumerate(similarity[idx]))
+        cos_score = sorted(lst, key=lambda x : x[1], reverse=True)
+        cos_score = lst[1:11]  # top 10
+        top_10 = []
         for i in range(len(lst)):
-            a = lst[i][0]
-            l.append(data['movie_title'][a])
-        return l # list of top 10 recommended movies
+            movie_indices = cos_score[i][0]
+            top_10.append(data['movie_title'][movie_indices])
+        return top_10  # list of top 10 recommended movies
     
 
 # converting list of string to list (eg. "["abc","def"]" to ["abc","def"])

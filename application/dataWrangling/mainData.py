@@ -1,4 +1,4 @@
-"""This file consists of a function to generate movie data by scraping 
+"""This file consists of a function to generate movie data by scraping
     Wikipedia and using a third party API.
     Also, Generates a csv that contains the movie data through 2020"""
 
@@ -64,7 +64,6 @@ def generate_movie_data(url_link):
     df = df[['Title', 'Cast and crew', 'genres']]
 
     # Extracting out the features from Cast and crew 
-    # which we will later append to our 2017 dataset
 
     def get_director(x):
         if " (director)" in x:
@@ -125,12 +124,11 @@ if __name__ == '__main__':
     from data_2019 import data_2019
     from data_2020 import data_2020
 
-    # appending all the datasets together 
+    # appending all the datasets together
     main_data = data_2016.append(data_2017.append(data_2018.append
             (data_2019.append(data_2020, ignore_index=True), 
             ignore_index=True), ignore_index=True), ignore_index=True)
     
-    # creating a csv 
+    # creating a csv
     main_data.to_csv('main_data.csv', index=False)
-
     print(main_data.shape)

@@ -73,7 +73,7 @@ def get_actor3(x):
     casts = []
     for i in x:
         casts.append(i.get('name'))
-    if casts == [] or len(casts)<=2:
+    if casts == [] or len(casts) <= 2:
         return np.NaN
     else:
         return (casts[2])
@@ -108,11 +108,3 @@ data_2017['movie_title'] = data_2017['movie_title'].str.lower()
 data_2017['comb'] = data_2017['actor_1_name'] + ' ' + \
     data_2017['actor_2_name'] + ' ' + data_2017['actor_3_name'] \
     + ' ' + data_2017['director_name'] + ' ' + data_2017['genres']
-
-# # Appending 2017 movie data to our 2016 movie data
-# data_thru_2016 = pd.read_csv('datasets/data.csv')
-# data_thru_2017 = data_thru_2016.append(movie)
-
-# data_thru_2017.drop_duplicates(subset="movie_title", keep='last', inplace=True)
-
-# data_thru_2017.to_csv('datasets/data_2017.csv', index=False)

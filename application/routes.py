@@ -1,15 +1,12 @@
-import pandas as pd
 import numpy as np
 from flask import render_template, request
-import json
 import bs4 as bs
 import urllib.request
 import joblib
-import requests
 import ssl
 
 from application import app
-from application.main import create_similarity, rcmd, get_suggestions, convert_to_list
+from application.main import crcmd, get_suggestions, convert_to_list
 
 # load the nlp model and tfidf vectorizer from disk
 clf = joblib.load('predictor1.joblib')
@@ -59,9 +56,6 @@ def recommend():
     rec_movies = request.form['rec_movies']
     rec_posters = request.form['rec_posters']
 
-    # # get movie suggestions for auto complete
-    # suggestions = get_suggestions()
-
     # call the convert_to_list function for every string
     # that needs to be converted to list
     # convert string to list (eg. "[1,2,3]" to [1,2,3])
@@ -82,9 +76,9 @@ def recommend():
     for i in range(len(cast_bios)):
         cast_bios[i] = cast_bios[i].replace(r'\n', '\n').replace(r'\"', '\"')
     
-    # combining multiple lists as a dictionary which can be passed to the 
-    # html file so that it can be processed easily
-    # and the order of information will be preserved
+    # combining multiple lists as a dictionary which can
+    # be passed to the html file so that it can be processed 
+    # easily and the order of information will be preserved
     movie_cards = {rec_posters[i]: rec_movies[i] 
                 for i in range(len(rec_posters))}
     

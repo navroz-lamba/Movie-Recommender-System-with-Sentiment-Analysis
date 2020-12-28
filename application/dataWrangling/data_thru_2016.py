@@ -30,11 +30,8 @@ def wrangle(X):
 
 data_2016 = wrangle(data)
 
-# Making a column with a combination of all the information 
+# Making a column with a combination of all the information
 # which will be useful later for our recommender system
 data_2016['comb'] = data_2016['actor_1_name'] + ' ' + \
     data_2016['actor_2_name'] + ' ' + data_2016['actor_3_name'] \
     + ' ' + data_2016['director_name'] + ' ' + data_2016['genres']
-
-# # we extracted the data we wanted and now we will put into an csv
-# data.to_csv('datasets/data.csv', index=False)
