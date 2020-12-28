@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from flask import Flask, render_template, request
 from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
@@ -69,7 +70,6 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/home")
 def home():
-    def home():
     suggestions = get_suggestions()
     return render_template('home.html',suggestions=suggestions)
 
