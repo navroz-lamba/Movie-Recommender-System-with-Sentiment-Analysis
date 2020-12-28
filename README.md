@@ -18,12 +18,19 @@ How to get the API key?
 Create an account on https://www.themoviedb.org/, click on the API link from the left hand sidebar in your account settings and fill all the details to apply for API key. If you are asked for the website URL, just give "NA" if you don't have one. You will see the API key in your API sidebar once your request is approved.
 
 How to run the project?
+
 • Install all the dependencies in the requirements.txt file.
+
 • Clone this repository in your local system.
+
 • Replace YOUR_API_KEY in the static/recommend.js file.
+
 • Run mainData.py in the Data Wrangling folder to generate a csv with the movie data all the way through 2020. 
+
 • Open the command prompt from your project directory and run the command 'python run.py'.
+
 • Go to your browser and type http://127.0.0.1:5000/ in the address bar.
+
 • ALL SET! 
 
 Content Bases Recommender System:
