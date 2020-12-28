@@ -21,7 +21,10 @@ ssl._create_default_https_context = ssl._create_unverified_context
 @app.route("/")
 @app.route("/home")
 def home():
-    suggestions = get_suggestions()
+    data = pd.read_csv('datasets/main_data.csv')
+#     print(data.columns)
+#     return list(data['movie_title'].str.capitalize())
+    suggestions = list(data['movie_title'].str.capitalize())
     return render_template('home.html', suggestions=suggestions)
 
 

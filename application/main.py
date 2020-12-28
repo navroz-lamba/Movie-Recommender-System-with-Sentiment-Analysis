@@ -51,8 +51,8 @@ def convert_to_list(my_list):
     return my_list
 
 
-# for autocomplete
-def get_suggestions():
-    data = pd.read_csv('datasets/main_data.csv')
-    print(data.columns)
-    return list(data['movie_title'].str.capitalize())
+# # for autocomplete
+# def get_suggestions():
+#     data = pd.read_csv('datasets/main_data.csv')
+#     print(data.columns)
+#     return list(data['movie_title'].str.capitalize())
