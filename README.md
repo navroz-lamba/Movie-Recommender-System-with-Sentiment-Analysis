@@ -8,9 +8,10 @@ Content Based Recommender System recommends movies similar to the movie user lik
 
 The details of the movies(title, genre, runtime, rating, poster, etc) are fetched using an API by TMDB, https://www.themoviedb.org/documentation/api. Also, using the IMDB id of the movie from the API, I performed web scraping using beautifulsoup4 to extract the reviews given by the user on the IMDB site, and performed sentiment analysis on those reviews.
 
-Check out for yourself: 
+Check out for yourself: https://movies-u-like.herokuapp.com/
 
-Application demo: 
+Application quick demo: 
+
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/67918990/103171183-14c80580-4818-11eb-9c5b-1f7e41362095.gif)
 
 How to get the API key?
@@ -20,7 +21,7 @@ How to run the project?
 • Install all the dependencies in the requirements.txt file.
 • Clone this repository in your local system.
 • Replace YOUR_API_KEY in the static/recommend.js file.
-• Run mainData.py to generate a csv with the movie data all the way through 2020. 
+• Run mainData.py in the Data Wrangling folder to generate a csv with the movie data all the way through 2020. 
 • Open the command prompt from your project directory and run the command 'python run.py'.
 • Go to your browser and type http://127.0.0.1:5000/ in the address bar.
 • ALL SET! 
@@ -43,3 +44,7 @@ More about Cosine Similarity : [Understanding the Math behind Cosine Similarity]
 3. [List of movies in 2018](https://en.wikipedia.org/wiki/List_of_American_films_of_2018)
 4. [List of movies in 2019](https://en.wikipedia.org/wiki/List_of_American_films_of_2019)
 5. [List of movies in 2020](https://en.wikipedia.org/wiki/List_of_American_films_of_2020)
+
+NOTE - 
+• I have added the notebooks if you would further like to understand the code better, or maybe look at data wrangling. You will also find a notebook on sentiment analysis model. 
+• I couldn't leave the credits dataset in the repository as it was more than 100MB and Git LFS(Large File Storage) would have been needed to make it happen, which doesn't work well with Heroku. 
