@@ -6,7 +6,7 @@ import joblib
 import ssl
 
 from application import app
-from application.main import crcmd, get_suggestions, convert_to_list
+from application.main import rcmd, get_suggestions, convert_to_list
 
 # load the nlp model and tfidf vectorizer from disk
 clf = joblib.load('predictor1.joblib')
