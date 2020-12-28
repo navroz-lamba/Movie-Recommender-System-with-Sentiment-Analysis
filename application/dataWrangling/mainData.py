@@ -131,6 +131,6 @@ if __name__ == '__main__':
             ignore_index=True), ignore_index=True), ignore_index=True)
     
     # creating a csv 
-    main_data.to_csv('datasets/main_data.csv', index=False)
+    main_data.to_csv('main_data.csv', index=False)
 
     print(main_data.shape)

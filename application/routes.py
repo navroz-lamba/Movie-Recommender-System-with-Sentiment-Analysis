@@ -9,8 +9,7 @@ import requests
 import ssl
 
 from application import app
-# from application.main import create_similarity, rcmd, get_suggestions, convert_to_list
-from application.main import create_similarity, rcmd, convert_to_list
+from application.main import create_similarity, rcmd, get_suggestions, convert_to_list
 
 # load the nlp model and tfidf vectorizer from disk
 clf = joblib.load('predictor1.joblib')
@@ -22,10 +21,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 @app.route("/")
 @app.route("/home")
 def home():
-    data = pd.read_csv('datasets/main_data.csv')
-#     print(data.columns)
-#     return list(data['movie_title'].str.capitalize())
-    suggestions = list(data['movie_title'].str.capitalize())
+    suggestions = get_suggestions()
     return render_template('home.html', suggestions=suggestions)
 
 
@@ -63,8 +59,8 @@ def recommend():
     rec_movies = request.form['rec_movies']
     rec_posters = request.form['rec_posters']
 
-    # get movie suggestions for auto complete
-    suggestions = get_suggestions()
+    # # get movie suggestions for auto complete
+    # suggestions = get_suggestions()
 
     # call the convert_to_list function for every string
     # that needs to be converted to list
