@@ -24,9 +24,9 @@
 }
 
 #content {
-	background-image: url("../static/image2.jpg");
+	background-image: url("../static/image.jpg");
 	background-color: #181818;
-	background-size: cover;
+	/* background-size: cover; */
 	font-family: 'Noto Sans JP', sans-serif;
 }
 
