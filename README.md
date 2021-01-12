@@ -9,7 +9,7 @@ Content Based Recommender System recommends movies similar to the movie user lik
 
 The details of the movies(title, genre, runtime, rating, poster, etc) are fetched using an API by TMDB, https://www.themoviedb.org/documentation/api. Also, using the IMDB id of the movie from the API, I performed web scraping using beautifulsoup4 to extract the reviews given by the user on the IMDB site, and performed sentiment analysis on those reviews.
 
-Check out for yourself: https://movies-u-like.herokuapp.com/
+Check out the app: https://movies-u-like.herokuapp.com/
 
 Application quick demo: 
 
@@ -18,7 +18,7 @@ Application quick demo:
 How to get the API key?
 Create an account on https://www.themoviedb.org/, click on the API link from the left hand sidebar in your account settings and fill all the details to apply for API key. If you are asked for the website URL, just give "NA" if you don't have one. You will see the API key in your API sidebar once your request is approved.
 
-How to run the project?
+How to run the app?
 
 • Install all the dependencies in the requirements.txt file.
 
