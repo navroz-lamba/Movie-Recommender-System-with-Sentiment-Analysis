@@ -5,6 +5,30 @@
 ![API](https://img.shields.io/badge/API-TMDB-fcba03)
 ![Paas](https://img.shields.io/badge/Paas-Heroku-orange)
 
+Overview of the project:
+
+•	Appended 2016 and 2017 movie datasets from Kaggle 
+
+•	Scraped the movie data for 2018-2020 from Wikipedia 
+
+•	Reviews were scraped from IMDB using bs4 
+
+•	TfidfVectorizer was used along with Spacy to tokenize and learn the vocabulary from the document 
+
+•	Multinomial Naive Bayes Classifier was used as the predictor for Sentiment Analysis 
+
+•	Used F-Score, Precision, recall evaluating model performance
+
+•	Joblib library was used to pickle the model and to load it in Flask
+
+•	Cosine-similarity was used for the content-based recommender system
+
+•	Used third party API to extract movie specifics such as genre, rating, poster, etc.
+
+•	HTML, CSS and JavaScript were used for the front-end 
+
+•	The web application was deployed on Heroku
+
 Content Based Recommender System recommends movies similar to the movie user likes, and analyses the sentiments on the reviews given by the user for that movie.
 
 The details of the movies(title, genre, runtime, rating, poster, etc) are fetched using an API by TMDB, https://www.themoviedb.org/documentation/api. Also, using the IMDB id of the movie from the API, I performed web scraping using beautifulsoup4 to extract the reviews given by the user on the IMDB site, and performed sentiment analysis on those reviews.
